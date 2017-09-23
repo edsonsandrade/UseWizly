@@ -1,0 +1,65 @@
+
+<div class="card large" *ngIf="true" style="width: 400px; height: 510px;">
+  <div class="card-content">
+    <span class="card-title activator col s12"><i class="material-icons left">fingerprint</i>{{ language?.labels._formTitle }}</span>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit($event)" style="padding: 15px;" class="col s12" id="userForm">
+
+        <md-input-container style="margin-bottom: 16px; width: 100%;">
+          <input mdInput placeholder="{{language?.labels._name}}" required [(ngModel)]="user.name" id="name" name="name" #name="ngModel">
+        </md-input-container>
+
+        <md-input-container>
+          <input type="text" mdInput placeholder="{{language?.labels._login}}" required [(ngModel)]="user.login" id="login" name="login" #login="ngModel">
+        </md-input-container>
+
+        <div style="display: inline-block; padding-left: 20px;">
+            <button class="btn-floating waves-effect waves-light grey darken-1" [disabled]="true || !userForm.form.valid || deleteConfirm || user.userId==0"><i class="material-icons wheite-text">face</i></button>
+        </div>
+        <div style="display: inline-block; padding-left: 10px;">
+            <button class="btn-floating waves-effect waves-light  grey darken-1"
+                    [disabled]="!userForm.form.valid || deleteConfirm || user.userId==0"
+                    (click)="editPassword($event)">
+              <i class="material-icons white-text">vpn_key</i>
+            </button>
+        </div>
+        <div style="width: 70%; margin-bottom: 16px; border-top: 0px; display: inline-block">
+          <md-select style="width: 80%" placeholder="{{language?.labels._language}}" required [(ngModel)]="user.userLanguage" id="userLanguage" name="userLanguage" #password="ngModel">
+            <md-option *ngFor="let lang of langOptions" selected="lang.langCode=='pt_br'"[value]="lang.langCode">{{ lang.langName }}</md-option>
+          </md-select>
+        </div>
+
+        <div style="display: inline-block; padding-top: 10px; width: 20%;">
+          <img *ngIf="!user.userLanguage" src="../../assets/images/flags/light-grey-circle.png"/>
+          <img *ngIf="user.userLanguage=='pt_br'" src="../../assets/images/flags/brasil.png"/>
+          <img *ngIf="user.userLanguage=='en_us'" src="../../assets/images/flags/us.png"/>
+          <img *ngIf="user.userLanguage=='es_es'" src="../../assets/images/flags/espanha.png"/>
+        </div>
+
+
+        <md-input-container style="width: 100%">
+          <input mdInput placeholder="{{language?.labels._email}}" required [(ngModel)]="user.email" id="email" name="email" #email="ngModel">
+        </md-input-container>
+
+        <md-input-container style="width: 100%">
+          <input mdInput placeholder="{{language?.labels._altEmail}}" [(ngModel)]="user.altEmail" id="altEmail" name="altEmail" #altEmail="ngModel">
+        </md-input-container>
+
+        <md-slide-toggle [(ngModel)]="user.active" name="active"
+                  class="example-margin"
+                  [color]="color"
+                  [checked]="user.active == 'Y'"
+                  [disabled]="disabled">
+                  {{ user.active ? language?.labels._active : language?.labels._inactive}}
+        </md-slide-toggle>
+
+        <div class="card-action">
+          <button type="submit" id="btn1" class="btn green" [disabled]="!userForm.form.valid || deleteConfirm"><i class="material-icons">done</i></button>
+          <button type="button" class="btn red"  (click)="confirmDelete(true);" [disabled]="user.userId==0 || deleteConfirm"><i class="material-icons">delete</i></button>
+          <button type="button" class="btn amber" (click)="confirmDelete(false);" *ngIf="deleteConfirm"><i class="material-icons">pause</i></button>
+          <button type="button" class="btn red" (click)="onDeleteUser();" *ngIf="deleteConfirm"><i class="material-icons">check</i></button>
+          <button type="button" class="btn grey darken-2 right" (click)="closeForm();"><i class="material-icons">clear</i></button>
+        </div>
+
+    </form>
+    </div>
+</div>

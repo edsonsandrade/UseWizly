@@ -1,0 +1,43 @@
+{
+  "labels": {
+    "_userId"     : "User Id",
+    "_client"     : "Client",
+    "_name"       : "Name",
+    "_login"      : "Login",
+    "_password"   : "Password",
+    "_pwdConfirm" : "Confirm password",
+    "_language"   : "Language",
+    "_image"      : "User Image",
+    "_email"      : "E-mail",
+    "_altEmail"   : "Alternative e-mail",
+    "_active"     : "Active",
+    "_inactive"   : "Inactive",
+    "_pwdTip"     : "Password tip",
+    "_listTitle"  : "User´s List",
+    "_formTitle"  : "User´s Form",
+    "_formPwd"    : "Set User Password"
+  },
+  "placeholders": {
+    "_search"  : "Search by user name"
+  },
+  "hints": {
+    "_pwTip_hint": "This hint will be used to help you remember your password"
+  },
+  "messages": {
+    "_insertSuccess"  : "New user created!",
+    "_insertFail"     : "Couldn't create user.",
+    "_updateSuccess"  : "User updated successfully!",
+    "_updateFail"     : "Couldn't updated user.",
+    "_deleteConfirm"  : "Proceed with deletion?",
+    "_deleteCanceled" : "User deletion canceld by user!",
+    "_deleteSuccess"  : "User successfully delete!",
+    "_updateFail"     : "Couldn't delete user.",
+    "_pwdNoMatch"     : "Password doest'n match",
+    "_pwdSuccess"     : "Password set successfully!",
+    "_editExit"       : "If you continue all chages will be lost!\nConfirm? ",
+    "_enfOfList"      : "No more users to show..."
+  },
+  "errors": {
+    "_listNoRecords"  : "Não foi possível obter usuários do banco de dados"
+  }
+}

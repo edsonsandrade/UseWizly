@@ -1,0 +1,67 @@
+
+    <div class="row fullScreen">
+      <div class="col s12 m12 l7 xl5 ">
+        <div class="card xlarge">
+          <div class="card-content">
+            <span class="card-title grey-text text-darken-4">
+              <div class="row">
+                <div class="col s6">
+                  <i class="material-icons left">fingerprint</i>{{ language?.labels._listTitle }}
+                </div>
+                <div class="col s6">
+                    <md-input-container>
+                      <md-icon mdPrefix aria-hidden="true" (click)="resetUserList();" style="cursor: pointer;">search</md-icon>
+                      <input type="text" id="searchString" class="searchField" mdInput [ngModel]="searchString">
+                    </md-input-container>
+                </div>
+              </div>
+            </span>
+              <div class="row">
+                <div class="col s12" style="position: relative; padding-right: 20px;">
+                  <table class="">
+                    <th class="col s2 m2 l2 scrlTableHeader"># </th>
+                    <th class="col s6 m6 l6 scrlTableHeader">{{ language?.labels._name }}</th>
+                    <th class="col s4 m4 l4 scrlTableHeader">{{ language?.labels._login }}</th>
+                    <div style="position: absolute; right: 36px; top: -20px;" *ngIf="!listService.deleteSelected">
+                      <a class="btn-floating waves-effect waves-light green accent-4" (click)="newUser();"><i class="material-icons">add</i></a>
+                    </div>
+                    <div style="position: absolute; right: 36px; top: -20px;" *ngIf="listService.deleteSelected">
+                      <button type="button" class="btn-floating red" (click)="deleteUsers();" *ngIf="listService.deleteConfirm"><i class="material-icons">check</i></button>
+                      <button type="button" class="btn-floating amber" (click)="listService.confirmDelete(false);" *ngIf="listService.deleteConfirm"><i class="material-icons">pause</i></button>
+                      <button class="btn-floating waves-effect waves-light red" (click)="listService.confirmDelete(true);" [disabled]="  listService.deleteConfirm"><i class="material-icons">delete</i></button>
+                    </div>
+                  </table>
+                  <div class="fixedHeight" infiniteScroll id="fixedHeight"
+                  [infiniteScrollDistance]="2"
+                  [infiniteScrollThrottle]="500"
+                  (scrolled)="loadPageOfUsers()"
+                  [scrollWindow]="false" style="padding: 0;" >
+                    <table class="bordered highlight">
+                      <tr *ngFor=" let user of rows; let i=index" (click)="onSelectUser(user.userId, i)">
+                        <td class="col s2 m2 l2 scrlTable">{{i+1}}</td>
+                        <td class="col s6 m6 l6 scrlTable">{{user.name}}</td>
+                        <td class="col s4 m4 l4 scrlTable">{{user.login}}
+                          <div class="right" style="padding-right: 12px;">
+                            <deleteMark (clickDelete)="listService.toggleDelete(user.userId)"></deleteMark>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+              </div>
+            </div>
+            <div class="card-action" style="height: 30px;">
+                <div class="progress white" *ngIf="!isLoaded!">
+                   <div class="indeterminate"></div>
+               </div>
+                <div *ngIf="noMoreRows">
+                   <i>{{ language?.messages._enfOfList }}</i>
+               </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m12 l5 xl7">
+      <router-outlet></router-outlet>
+    </div>
+</div>

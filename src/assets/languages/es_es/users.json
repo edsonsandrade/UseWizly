@@ -1,0 +1,19 @@
+{
+  "labels": {
+    "_userId"  : "User Id",
+    "_client"  : "Client",
+    "_name"    : "User's Name",
+    "_login"   : "User's Login",
+    "_password": "User's Password"
+  },
+  "messages": {
+    "_insertSuccess"  : "New user created!",
+    "_insertFail"     : "Couldn't create user.",
+    "_updateSuccess"  : "User updated successfully!",
+    "_updateFail"     : "Couldn't updated user.",
+    "_deleteConfirm"  : "Proceed with deletion?",
+    "_deleteCanceled" : "User deletion canceld by user!",
+    "_deleteSuccess"  : "User successfully delete!",
+    "_updateFail"     : "Couldn't delete user."
+  }
+}

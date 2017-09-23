@@ -1,0 +1,8 @@
+
+.toggleDelete {
+  widht: 16px;
+  hight: 16px;
+  padding-top: -6px;
+  font-size: 18px !important;
+  color: gray;
+}

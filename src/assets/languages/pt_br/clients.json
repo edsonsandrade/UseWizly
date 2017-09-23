@@ -1,0 +1,36 @@
+{
+  "labels": {
+    "_clientId"   : "Código do Cliente",
+    "_name"       : "Nome do Cliente",
+    "_login"      : "Login",
+    "_address1"   : "Endereço",
+    "_address2"   : "Complemento",
+    "_country"    : "País",
+    "_state"      : "Estado",
+    "_email"      : "E-mail",
+    "_zipCode"    : "CEP",
+    "_ccNumber"   : "Número Cartão de Crédito",
+    "_valid"      : "Validade",
+    "_secCode"    : "Código"
+  },
+  "placeholders": {
+    "_search"     : "Pesquisar pelo nome do cliente"
+  },
+  "hints": {
+    "_hint"       : ""
+  },
+  "messages": {
+    "_insertSuccess"  : "Novo cliente criado!",
+    "_insertFail"     : "Não foi possível criar o cliente.",
+    "_updateSuccess"  : "Cliente atualizado com suacesso!",
+    "_updateFail"     : "Não foi possível atualizar o cliente.",
+    "_deleteConfirm"  : "Confirma a exclusão?",
+    "_deleteCanceled" : "Exclusão cancelada pelo cliente!",
+    "_deleteSuccess"  : "Excluão do cliente realizada com sucesso!",
+    "_updateFail"     : "Não foi possível excluir o cliente.",
+    "_pwdNoMatch"     : "Senha não confere com a confirmação",
+    "_pwdSuccess"     : "Password definida com sucesso!",
+    "_editExit"       : "Se você continuar suas alterção serão perdidas!\nConfirma? ",
+    "_enfOfList"      : "Não ha mais clientes na lista..."
+  }
+}

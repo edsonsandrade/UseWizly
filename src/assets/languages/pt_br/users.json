@@ -1,0 +1,43 @@
+{
+  "labels": {
+    "_userId"     : "Código Usuário",
+    "_client"     : "Cliente",
+    "_name"       : "Nome Usuário",
+    "_login"      : "Login",
+    "_password"   : "Senha",
+    "_pwdConfirm" : "Confirme a senha",
+    "_language"   : "Idioma",
+    "_image"      : "Imagem do usuário",
+    "_email"      : "E-mail",
+    "_altEmail"   : "E-mail alternativo",
+    "_active"     : "Ativo",
+    "_inactive"   : "Inativo",
+    "_pwdTip"     : "Dica para senha",
+    "_listTitle"  : "Lista dos Usuários",
+    "_formTitle"  : "Formuário dos Usuários",
+    "_formPwd"    : "Senha de Acesso"
+  },
+  "placeholders": {
+    "_search"     : "Pesquisar pelo nome do usuário"
+  },
+  "hints": {
+    "_pwTip_hint": "Esta dica irá lhe ajudar a lembrar de sua senha"
+  },
+  "messages": {
+    "_insertSuccess"  : "Novo usuário criado!",
+    "_insertFail"     : "Não foi possível criar o usuário.",
+    "_updateSuccess"  : "Usário atualizado com suacesso!",
+    "_updateFail"     : "Não foi possível atualizar o usuário.",
+    "_deleteConfirm"  : "Confirma a exclusão?",
+    "_deleteCanceled" : "Exclusão cancelada pelo usuário!",
+    "_deleteSuccess"  : "Excluão do usuário realizada com sucesso!",
+    "_updateFail"     : "Não foi possível excluir o usuário.",
+    "_pwdNoMatch"     : "Senha não confere com a confirmação",
+    "_pwdSuccess"     : "Password definida com sucesso!",
+    "_editExit"       : "Se você continuar suas alterção serão perdidas!\nConfirma? ",
+    "_enfOfList"      : "Não ha mais usuários na lista..."
+  },
+  "errors": {
+    "_listNoRecords"  : "Não foi possível obter usuários do banco de dados"
+  }
+}
